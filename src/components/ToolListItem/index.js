@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  Container, Link, Description, Tags,
+  Container, Link, Description, Tags, RemoveButton,
 } from './styles';
 
 // eslint-disable-next-line react/prop-types
@@ -17,6 +17,9 @@ function ToolListItem({ item }) {
           <li>{`#${tag}`}</li>
         ))}
       </Tags>
+      <RemoveButton>
+        <i className="fas fa-times" />
+      </RemoveButton>
     </Container>
   );
 }

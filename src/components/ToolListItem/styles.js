@@ -8,6 +8,21 @@ export const Container = styled.div`
   padding: 20px;
   border-radius: 4px;
   box-shadow: 0 30px 60px -20px ${colors.darkerWhite};
+  position: relative;
+`;
+
+export const RemoveButton = styled.button`
+  color: ${colors.lighterInk};
+  font-size: 20px;
+  border: none;
+  background: none;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+
+  :hover {
+    color: ${colors.darkerRed};
+  }
 `;
 
 export const Link = styled.a`
