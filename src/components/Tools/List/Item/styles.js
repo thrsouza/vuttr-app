@@ -12,10 +12,14 @@ export const Container = styled.div`
   position: relative;
 `;
 
-export const Link = styled.a`
+export const Title = styled.span`
   color: ${colors.ink};
   font-size: 25px;
-  text-decoration: none;
+`;
+
+export const TitleLink = styled.a`
+  color: ${colors.ink};
+  font-size: 25px;
 `;
 
 export const Description = styled.p`

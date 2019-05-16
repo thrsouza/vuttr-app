@@ -1,10 +1,11 @@
-import { all } from 'redux-saga/effects';
+import { all, takeLatest } from 'redux-saga/effects';
 
-// import { SessionTypes } from '../ducks/session';
-// import { addSessionRequest } from './session';
+import { ToolsTypes } from '../ducks/tools';
+import { getToolsRequest, deleteToolRequest } from './tools';
 
 export default function* rootSaga() {
   yield all([
-    // takeLatest(SessionTypes.ADD_SESSION_REQUEST, addSessionRequest),
+    takeLatest(ToolsTypes.GET_TOOLS_REQUEST, getToolsRequest),
+    takeLatest(ToolsTypes.DELETE_TOOL_REQUEST, deleteToolRequest),
   ]);
 }

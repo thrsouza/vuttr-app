@@ -50,6 +50,8 @@
     "redux": "^4.0.1",
     "redux-saga": "^1.0.2",
     "redux-thunk": "^2.3.0",
+    "reduxsauce": "^1.1.0",
+    "seamless-immutable": "^7.1.4",
     "styled-components": "^4.2.0",
     "yup": "^0.27.0"
   },

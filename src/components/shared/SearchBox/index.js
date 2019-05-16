@@ -32,7 +32,7 @@ SearchBox.propTypes = {
 };
 
 SearchBox.defaultProps = {
-  value: null,
+  value: '',
   onChange: () => {},
 };
 

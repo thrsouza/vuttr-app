@@ -7,7 +7,7 @@ import Modal from '../../shared/Modal';
 
 import * as Styled from './styles';
 
-function ToolDelete({ item }) {
+function ToolDelete({ item, handleDelete }) {
   const [modalState, setModalState] = useState({ isOpen: false });
 
   function handleOpenModal() {
@@ -19,6 +19,7 @@ function ToolDelete({ item }) {
   }
 
   function handleRemoveItem() {
+    handleDelete(item.id);
     setModalState({ isOpen: false });
   }
 
@@ -52,6 +53,7 @@ ToolDelete.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
   }).isRequired,
+  handleDelete: PropTypes.func.isRequired,
 };
 
 export default ToolDelete;
