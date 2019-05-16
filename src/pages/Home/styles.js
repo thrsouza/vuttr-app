@@ -11,19 +11,19 @@ export const Container = styled.div`
 export const Content = styled.div`
   max-width: 900px;
   width: 90%;
+`;
 
-  .action-box {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 0 10px 0;
-    width: 100%;
-    flex-flow: wrap;
+export const ActionContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0 10px 0;
+  width: 100%;
+  flex-flow: wrap;
+`;
 
-    .left {
-      display: flex;
-      flex-flow: wrap;
-      width: 100%;
-      max-width: 700px;
-    }
-  }
+export const LeftContent = styled.div`
+  display: flex;
+  flex-flow: wrap;
+  width: 100%;
+  max-width: 700px;
 `;

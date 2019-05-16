@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import colors from '../../styles/colors';
+
+import colors from '../../../../styles/colors';
 
 export const Container = styled.div`
   background-color: ${colors.white};
@@ -11,23 +12,10 @@ export const Container = styled.div`
   position: relative;
 `;
 
-export const RemoveButton = styled.button`
-  color: ${colors.lighterInk};
-  font-size: 20px;
-  border: none;
-  background: none;
-  position: absolute;
-  top: 15px;
-  right: 20px;
-
-  :hover {
-    color: ${colors.darkerRed};
-  }
-`;
-
 export const Link = styled.a`
-  color: ${colors.blue};
-  font-size: 20px;
+  color: ${colors.ink};
+  font-size: 25px;
+  text-decoration: none;
 `;
 
 export const Description = styled.p`
