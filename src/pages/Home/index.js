@@ -30,6 +30,7 @@ function Home({ tools, getToolsRequest, deleteToolRequest }) {
 
   function handleToolListItemDelete(id) {
     deleteToolRequest(id);
+    getToolsRequest(state.searchText, state.searchTagOnly);
   }
 
   return (

@@ -3,10 +3,18 @@ import * as unform from '@rocketseat/unform';
 
 import colors from '../../../styles/colors';
 
-export const Form = styled(unform.Form)`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px 20px;
+
+  > input + span,
+  > textarea + span {
+    display: flex;
+    flex-flow: row-reverse;
+    margin-top: 5px;
+    color: ${colors.red};
+  }
 `;
 
 export const Input = styled(unform.Input)`
@@ -28,8 +36,9 @@ export const Textarea = styled(unform.Textarea)`
 `;
 
 export const Label = styled.label`
+  font-weight: 600;
   margin-bottom: 10px;
-  margin-top: 15px;
+  margin-top: 25px;
 `;
 
 export const Footer = styled.div`
