@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import ButtonDelete from '../../shared/Button/Delete';
-import Icon from '../../shared/Icon';
-import Modal from '../../shared/Modal';
+import ButtonDelete from '../../../components/Button/Delete';
+import FontIcon from '../../../components/FontIcon';
+import Modal from '../../../components/Modal';
 
 import * as Styled from './styles';
 
-function ToolDelete({ item, handleDelete }) {
+function DeleteItem({ item, handleDelete }) {
   const [modalState, setModalState] = useState({ isOpen: false });
 
   function handleOpenModal() {
@@ -28,7 +28,7 @@ function ToolDelete({ item, handleDelete }) {
       <ButtonDelete onClick={handleOpenModal} />
       <Modal isOpen={modalState.isOpen} onRequestClose={handleCloseModal}>
         <h4>
-          <Icon className="fas fa-plus" text="Remove tool" />
+          <FontIcon className="fas fa-plus" text="Remove tool" />
         </h4>
         <Styled.Container>
           <Styled.Text>
@@ -48,7 +48,7 @@ function ToolDelete({ item, handleDelete }) {
   );
 }
 
-ToolDelete.propTypes = {
+DeleteItem.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
@@ -56,4 +56,4 @@ ToolDelete.propTypes = {
   handleDelete: PropTypes.func.isRequired,
 };
 
-export default ToolDelete;
+export default DeleteItem;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Button from '../../shared/Button';
+import Button from '../../../components/Button';
 
 import colors from '../../../styles/colors';
 

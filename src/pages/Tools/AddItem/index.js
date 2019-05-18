@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Form } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
-import Button from '../../shared/Button';
-import Icon from '../../shared/Icon';
-import Modal from '../../shared/Modal';
-import TagsInput from '../../shared/TagsInput';
+import Button from '../../../components/Button';
+import FontIcon from '../../../components/FontIcon';
+import Modal from '../../../components/Modal';
+import TagInput from '../../../components/TagInput';
 
 import * as Styled from './styles';
 
@@ -16,7 +16,7 @@ const schema = Yup.object().shape({
   tags: Yup.array().required('Tags is required'),
 });
 
-function ToolAdd() {
+function AddItem() {
   const [modalState, setModalState] = useState({ isOpen: false });
 
   function handleOpenModal() {
@@ -34,11 +34,11 @@ function ToolAdd() {
   return (
     <>
       <Button type="button" onClick={handleOpenModal}>
-        <Icon className="fas fa-plus" text="Add" />
+        <FontIcon className="fas fa-plus" text="Add" />
       </Button>
       <Modal isOpen={modalState.isOpen} onRequestClose={handleCloseModal}>
         <h4>
-          <Icon className="fas fa-plus" text="Add new tool" />
+          <FontIcon className="fas fa-plus" text="Add new tool" />
         </h4>
         <Form schema={schema} onSubmit={handleSubmit}>
           <Styled.Container>
@@ -52,7 +52,7 @@ function ToolAdd() {
             <Styled.Textarea name="description" placeholder="Enter with description" />
 
             <Styled.Label>Tags *</Styled.Label>
-            <TagsInput name="tags" placeholder="Enter with a new tag" />
+            <TagInput name="tags" placeholder="Enter with a new tag" />
 
             <Styled.Footer>
               <Button type="submit">Add tool</Button>
@@ -64,4 +64,4 @@ function ToolAdd() {
   );
 }
 
-export default ToolAdd;
+export default AddItem;

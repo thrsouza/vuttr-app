@@ -5,15 +5,15 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ToolsActions from '../../store/ducks/tools';
 
-import CheckBox from '../../components/shared/CheckBox';
-import SearchBox from '../../components/shared/SearchBox';
+import CheckBox from '../../components/CheckBox';
+import SearchBox from '../../components/SearchBox';
 
-import ToolAdd from '../../components/Tools/Add';
-import ToolList from '../../components/Tools/List';
+import AddItem from './AddItem';
+import List from './List';
 
 import * as Styled from './styles';
 
-function Home({ tools, getToolsRequest, deleteToolRequest }) {
+function ToolsPage({ tools, getToolsRequest, deleteToolRequest }) {
   const [state, setState] = useState({ searchText: null, searchTagOnly: true });
 
   useEffect(() => {
@@ -48,15 +48,15 @@ function Home({ tools, getToolsRequest, deleteToolRequest }) {
               onChange={handleCheckBox}
             />
           </Styled.LeftContent>
-          <ToolAdd />
+          <AddItem />
         </Styled.ActionContent>
       </Styled.Content>
-      <ToolList data={tools.data} handleToolListItemDelete={handleToolListItemDelete} />
+      <List data={tools.data} handleToolListItemDelete={handleToolListItemDelete} />
     </Styled.Container>
   );
 }
 
-Home.propTypes = {
+ToolsPage.propTypes = {
   tools: PropTypes.shape({
     loading: PropTypes.bool,
     data: PropTypes.arrayOf(
@@ -81,4 +81,4 @@ const mapDispatchToProps = dispatch => bindActionCreators(ToolsActions, dispatch
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Home);
+)(ToolsPage);

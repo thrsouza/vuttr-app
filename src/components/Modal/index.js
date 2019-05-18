@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 
-import colors from '../../../styles/colors';
+import colors from '../../styles/colors';
 
 const customStyles = {
   overlay: {

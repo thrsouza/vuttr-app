@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { WithContext as ReactTags } from 'react-tag-input';
+import { WithContext as ReactTagInput } from 'react-tag-input';
 import { useField } from '@rocketseat/unform';
 import PropTypes from 'prop-types';
 
@@ -14,7 +14,7 @@ const KeyCodes = {
 
 const delimiters = [KeyCodes.COMMA, KeyCodes.ENTER, KeyCodes.SPACE, KeyCodes.TAB];
 
-function TagsInput({ name, placeholder }) {
+function TagInput({ name, placeholder }) {
   const ref = useRef(null);
   const { fieldName, registerField, error } = useField(name);
   const [tagsState, setTagsState] = useState([]);
@@ -39,7 +39,7 @@ function TagsInput({ name, placeholder }) {
   return (
     <>
       <Container>
-        <ReactTags
+        <ReactTagInput
           tags={tagsState}
           name={name}
           placeholder={placeholder}
@@ -57,13 +57,13 @@ function TagsInput({ name, placeholder }) {
   );
 }
 
-TagsInput.propTypes = {
+TagInput.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
 };
 
-TagsInput.defaultProps = {
+TagInput.defaultProps = {
   placeholder: null,
 };
 
-export default TagsInput;
+export default TagInput;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import SharedIcon from '../../shared/Icon';
+import FontIcon from '../../../components/FontIcon';
 
 import colors from '../../../styles/colors';
 
@@ -18,7 +18,7 @@ export const EmptyContainer = styled.div`
   width: 100%;
 `;
 
-export const Icon = styled(SharedIcon)`
+export const Icon = styled(FontIcon)`
   display: flex;
   justify-content: center;
   color: ${colors.mostDarkestWhite};

@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ToolListItem from './Item';
+import ListItem from '../ListItem';
 
 import * as Styled from './styles';
 
-function ToolList({ data, handleToolListItemDelete }) {
+function List({ data, handleToolListItemDelete }) {
   function renderData() {
     if (data) {
       return data.map(item => (
-        <ToolListItem key={item.id} item={item} handleDelete={handleToolListItemDelete} />
+        <ListItem key={item.id} item={item} handleDelete={handleToolListItemDelete} />
       ));
     }
     return (
@@ -22,7 +22,7 @@ function ToolList({ data, handleToolListItemDelete }) {
   return <Styled.Container>{renderData()}</Styled.Container>;
 }
 
-ToolList.propTypes = {
+List.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -35,8 +35,8 @@ ToolList.propTypes = {
   handleToolListItemDelete: PropTypes.func.isRequired,
 };
 
-ToolList.defaultProps = {
+List.defaultProps = {
   data: null,
 };
 
-export default ToolList;
+export default List;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Icon({ text, ...options }) {
+function FontIcon({ text, ...options }) {
   if (text) {
     return (
       <>
@@ -14,12 +14,12 @@ function Icon({ text, ...options }) {
   return <i {...options} />;
 }
 
-Icon.propTypes = {
+FontIcon.propTypes = {
   text: PropTypes.string,
 };
 
-Icon.defaultProps = {
+FontIcon.defaultProps = {
   text: null,
 };
 
-export default Icon;
+export default FontIcon;

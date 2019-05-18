@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ToolDelete from '../../Delete';
+import DeleteItem from '../DeleteItem';
 
 import {
   Container, Title, TitleLink, Description, Tags,
 } from './styles';
 
-function ToolListItem({ item, handleDelete }) {
+function ListItem({ item, handleDelete }) {
   function renderTitle() {
     if (item.link) {
       return (
@@ -28,12 +28,12 @@ function ToolListItem({ item, handleDelete }) {
           <li key={tag}>{`#${tag}`}</li>
         ))}
       </Tags>
-      <ToolDelete item={item} handleDelete={handleDelete} />
+      <DeleteItem item={item} handleDelete={handleDelete} />
     </Container>
   );
 }
 
-ToolListItem.propTypes = {
+ListItem.propTypes = {
   item: PropTypes.shape({
     title: PropTypes.string.isRequired,
     link: PropTypes.string,
@@ -43,4 +43,4 @@ ToolListItem.propTypes = {
   handleDelete: PropTypes.func.isRequired,
 };
 
-export default ToolListItem;
+export default ListItem;
