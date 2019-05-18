@@ -32,6 +32,11 @@
       "last 1 safari version"
     ]
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "dependencies": {
     "@rocketseat/unform": "^1.0.1",
     "axios": "^0.18.0",
@@ -45,7 +50,7 @@
     "react-modal": "^3.8.1",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0",
+    "react-scripts": "^3.0.1",
     "react-tag-input": "^6.4.0",
     "reactotron-react-js": "^3.1.0",
     "reactotron-redux": "^3.1.0",
@@ -69,10 +74,5 @@
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^1.6.0",
     "husky": "^2.3.0"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   }
 }
