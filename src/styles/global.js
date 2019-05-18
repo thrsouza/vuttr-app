@@ -48,6 +48,37 @@ const GlobalStyle = createGlobalStyle`
     font-size: 24px;
     line-height: 30px;
   }
+
+  .notification-error,
+  .notification-success {
+    display:flex;
+  }
+
+  .notification-error {
+    background-color: ${colors.red};
+
+    .notification-body:before {
+      display: block;
+      content: 'An error just happened!';
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  }
+  .notification-success {
+    background-color: ${colors.green};
+
+    .notification-body:before {
+      display: block;
+      content: 'This was a complete success!';
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  }
+
+  .notification-body {
+    padding: 30px;
+    font-size: 12px;
+  }
 `;
 
 export default GlobalStyle;

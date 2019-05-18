@@ -1,4 +1,7 @@
+/* eslint-disable no-console */
+
 import { call, put } from 'redux-saga/effects';
+import { NotificationError, NotificationSuccess } from '../../utils/notification';
 
 import api from '../../services/api';
 
@@ -17,10 +20,11 @@ export function* getToolsRequest({ searchText, searchTagOnly }) {
     }
 
     const { data } = yield call(api.get, endpoint);
-
     yield put(ToolsActions.getToolsSuccess(data));
   } catch (error) {
-    yield put(ToolsActions.getToolsFailure('Ocorreu um erro inexperado!'));
+    console.error(error);
+    NotificationError('An unexpected error has occurred!');
+    yield put(ToolsActions.getToolsFailure());
   }
 }
 
@@ -35,8 +39,11 @@ export function* addToolRequest({
       tags,
     });
     yield put(ToolsActions.addToolSuccess(data));
+    NotificationSuccess('Tool registered successfully!');
   } catch (error) {
-    yield put(ToolsActions.addToolFailure('Ocorreu um erro inexperado!'));
+    console.error(error);
+    NotificationError('An unexpected error has occurred!');
+    yield put(ToolsActions.getToolsFailure());
   }
 }
 
@@ -44,7 +51,10 @@ export function* deleteToolRequest({ id }) {
   try {
     yield call(api.delete, `/tools/${id}`);
     yield put(ToolsActions.deleteToolSuccess(id));
+    NotificationSuccess('Tool removed successfully!');
   } catch (error) {
-    yield put(ToolsActions.deleteToolFailure('Ocorreu um erro inexperado!'));
+    console.error(error);
+    NotificationError('An unexpected error has occurred!');
+    yield put(ToolsActions.getToolsFailure());
   }
 }

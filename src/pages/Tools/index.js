@@ -39,27 +39,27 @@ function ToolsPage({
   }
 
   function renderListItems() {
-    if (tools.data) {
-      if (tools.data.length === 0) {
-        return (
-          <Styled.EmptyContainer>
-            <Styled.BigMessage>No data found</Styled.BigMessage>
-            <Styled.BigFontIcon className="far fa-surprise" />
-          </Styled.EmptyContainer>
-        );
-      }
-
-      return tools.data.map(item => (
-        <ListItem key={item.id} item={item} handleDelete={handleToolListDeleteItem} />
-      ));
+    if (tools.loading && tools.data.length === 0) {
+      return (
+        <Styled.EmptyContainer>
+          <Styled.BigMessage>Loading...</Styled.BigMessage>
+          <Styled.BigFontIcon className="fas fa-circle-notch fa-spin" />
+        </Styled.EmptyContainer>
+      );
     }
 
-    return (
-      <Styled.EmptyContainer>
-        <Styled.BigMessage>Loading...</Styled.BigMessage>
-        <Styled.BigFontIcon className="fas fa-circle-notch fa-spin" />
-      </Styled.EmptyContainer>
-    );
+    if (tools.data.length === 0) {
+      return (
+        <Styled.EmptyContainer>
+          <Styled.BigMessage>No data found</Styled.BigMessage>
+          <Styled.BigFontIcon className="far fa-surprise" />
+        </Styled.EmptyContainer>
+      );
+    }
+
+    return tools.data.map(item => (
+      <ListItem key={item.id} item={item} handleDelete={handleToolListDeleteItem} />
+    ));
   }
 
   return (

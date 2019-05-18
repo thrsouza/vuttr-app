@@ -6,13 +6,13 @@ import Immutable from 'seamless-immutable';
 const { Types, Creators } = createActions({
   getToolsRequest: ['searchText', 'searchTagOnly'],
   getToolsSuccess: ['data'],
-  getToolsFailure: ['error'],
+  getToolsFailure: [],
   addToolRequest: ['title', 'link', 'description', 'tags'],
   addToolSuccess: ['data'],
-  addToolFailure: ['error'],
+  addToolFailure: [],
   deleteToolRequest: ['id'],
   deleteToolSuccess: ['id'],
-  deleteToolFailure: ['error'],
+  deleteToolFailure: [],
 });
 
 export const ToolsTypes = Types;
@@ -21,9 +21,8 @@ export default Creators;
 /* Initial State */
 
 export const INITIAL_STATE = Immutable({
-  loading: false,
-  data: null,
-  error: null,
+  loading: true,
+  data: [],
 });
 
 /* Reducers */
@@ -31,54 +30,45 @@ export const INITIAL_STATE = Immutable({
 const getToolsRequest = state => state.merge({
   ...state,
   loading: true,
-  error: null,
 });
 
 const getToolsSuccess = (state, { data }) => state.merge({
   data,
-  error: null,
   loading: false,
 });
 
-const getToolsFailure = (state, { error }) => state.merge({
+const getToolsFailure = state => state.merge({
   ...state,
-  error,
   loading: false,
 });
 
 const addToolRequest = state => state.merge({
   ...state,
   loading: true,
-  error: null,
 });
 
 const addToolSuccess = (state, { data }) => state.merge({
   loading: false,
   data: [...state.data, data],
-  error: null,
 });
 
-const addToolFailure = (state, { error }) => state.merge({
+const addToolFailure = state => state.merge({
   ...state,
-  error,
   loading: false,
 });
 
 const deleteToolRequest = state => state.merge({
   ...state,
   loading: true,
-  error: null,
 });
 
 const deleteToolSuccess = (state, { id }) => state.merge({
   loading: false,
   data: state.data.filter(p => p.id !== id),
-  error: null,
 });
 
-const deleteToolFailure = (state, { error }) => state.merge({
+const deleteToolFailure = state => state.merge({
   ...state,
-  error,
   loading: false,
 });
 

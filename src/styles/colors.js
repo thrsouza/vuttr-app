@@ -26,4 +26,12 @@ export default {
   lighterRed: '#FCC6C5',
   lighestRed: '#FCD7D6',
   mostLighestRed: '#FEEFEE',
+
+  darkerGreen: '#0E995D',
+  darkGreen: '#10B26C',
+  green: '#12DB89',
+  lightGreen: '#88EDC4',
+  lighterGreen: '#B7F7D8',
+  lighestGreen: '#CFF9E6',
+  mostLighestGreen: '#E7FBF3',
 };
