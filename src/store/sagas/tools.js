@@ -24,11 +24,27 @@ export function* getToolsRequest({ searchText, searchTagOnly }) {
   }
 }
 
+export function* addToolRequest({
+  title, link, description, tags,
+}) {
+  try {
+    const { data } = yield call(api.post, '/tools', {
+      title,
+      link,
+      description,
+      tags,
+    });
+    yield put(ToolsActions.addToolSuccess(data));
+  } catch (error) {
+    yield put(ToolsActions.addToolFailure('Ocorreu um erro inexperado!'));
+  }
+}
+
 export function* deleteToolRequest({ id }) {
   try {
     yield call(api.delete, `/tools/${id}`);
     yield put(ToolsActions.deleteToolSuccess(id));
   } catch (error) {
-    yield put(ToolsActions.getToolsFailure('Ocorreu um erro inexperado!'));
+    yield put(ToolsActions.deleteToolFailure('Ocorreu um erro inexperado!'));
   }
 }

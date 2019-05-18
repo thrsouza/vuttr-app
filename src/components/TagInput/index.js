@@ -24,7 +24,7 @@ function TagInput({ name, placeholder }) {
       name: fieldName,
       ref: ref.current,
       path: 'tags',
-      parseValue: () => tagsState,
+      parseValue: () => tagsState.map(item => item.text),
     });
   }, [fieldName, tagsState]); // eslint-disable-line
 
@@ -48,6 +48,7 @@ function TagInput({ name, placeholder }) {
           handleInputBlur={() => {}}
           delimiters={delimiters}
           allowDragDrop={false}
+          allowDeleteFromEmptyInput={false}
           ref={ref}
           inputFieldPosition="top"
         />

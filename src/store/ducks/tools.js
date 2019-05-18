@@ -8,6 +8,7 @@ const { Types, Creators } = createActions({
   getToolsSuccess: ['data'],
   getToolsFailure: ['error'],
   addToolRequest: ['title', 'link', 'description', 'tags'],
+  addToolSuccess: ['data'],
   addToolFailure: ['error'],
   deleteToolRequest: ['id'],
   deleteToolSuccess: ['id'],
@@ -51,6 +52,12 @@ const addToolRequest = state => state.merge({
   error: null,
 });
 
+const addToolSuccess = (state, { data }) => state.merge({
+  loading: false,
+  data: [...state.data, data],
+  error: null,
+});
+
 const addToolFailure = (state, { error }) => state.merge({
   ...state,
   error,
@@ -82,6 +89,7 @@ export const reducer = createReducer(INITIAL_STATE, {
   [Types.GET_TOOLS_SUCCESS]: getToolsSuccess,
   [Types.GET_TOOLS_FAILURE]: getToolsFailure,
   [Types.ADD_TOOL_REQUEST]: addToolRequest,
+  [Types.ADD_TOOL_SUCCESS]: addToolSuccess,
   [Types.ADD_TOOL_FAILURE]: addToolFailure,
   [Types.DELETE_TOOL_FAILURE]: deleteToolFailure,
   [Types.DELETE_TOOL_SUCCESS]: deleteToolSuccess,

@@ -13,7 +13,9 @@ import ListItem from './ListItem';
 
 import * as Styled from './styles';
 
-function ToolsPage({ tools, getToolsRequest, deleteToolRequest }) {
+function ToolsPage({
+  tools, getToolsRequest, addToolRequest, deleteToolRequest,
+}) {
   const [state, setState] = useState({ searchText: null, searchTagOnly: true });
 
   useEffect(() => {
@@ -28,7 +30,11 @@ function ToolsPage({ tools, getToolsRequest, deleteToolRequest }) {
     setState({ ...state, searchTagOnly: value });
   }
 
-  function handleToolListItemDelete(id) {
+  function handleToolListAddItem(title, link, description, tags) {
+    addToolRequest(title, link, description, tags);
+  }
+
+  function handleToolListDeleteItem(id) {
     deleteToolRequest(id);
   }
 
@@ -38,13 +44,13 @@ function ToolsPage({ tools, getToolsRequest, deleteToolRequest }) {
         return (
           <Styled.EmptyContainer>
             <Styled.BigMessage>No data found</Styled.BigMessage>
-            <Styled.BigFontIcon className="far fa-frown" />
+            <Styled.BigFontIcon className="far fa-surprise" />
           </Styled.EmptyContainer>
         );
       }
 
       return tools.data.map(item => (
-        <ListItem key={item.id} item={item} handleDelete={handleToolListItemDelete} />
+        <ListItem key={item.id} item={item} handleDelete={handleToolListDeleteItem} />
       ));
     }
 
@@ -71,7 +77,7 @@ function ToolsPage({ tools, getToolsRequest, deleteToolRequest }) {
               onChange={handleCheckBox}
             />
           </Styled.LeftContent>
-          <AddItem />
+          <AddItem handleAddItem={handleToolListAddItem} />
         </Styled.ActionContent>
       </Styled.Content>
       <Styled.ListContainer>{renderListItems()}</Styled.ListContainer>
@@ -92,6 +98,7 @@ ToolsPage.propTypes = {
     ),
   }).isRequired,
   getToolsRequest: PropTypes.func.isRequired,
+  addToolRequest: PropTypes.func.isRequired,
   deleteToolRequest: PropTypes.func.isRequired,
 };
 

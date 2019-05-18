@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Form } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
@@ -16,7 +17,7 @@ const schema = Yup.object().shape({
   tags: Yup.array().required('Tags is required'),
 });
 
-function AddItem() {
+function AddItem({ handleAddItem }) {
   const [modalState, setModalState] = useState({ isOpen: false });
 
   function handleOpenModal() {
@@ -27,7 +28,12 @@ function AddItem() {
     setModalState({ isOpen: false });
   }
 
-  function handleSubmit() {
+  function handleSubmit(data) {
+    const {
+      title, link, description, tags,
+    } = data;
+
+    handleAddItem(title, link, description, tags);
     setModalState({ isOpen: false });
   }
 
@@ -63,5 +69,9 @@ function AddItem() {
     </>
   );
 }
+
+AddItem.propTypes = {
+  handleAddItem: PropTypes.func.isRequired,
+};
 
 export default AddItem;
