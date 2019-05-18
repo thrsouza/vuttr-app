@@ -39,11 +39,14 @@
     "history": "^4.9.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-dnd": "^7.4.5",
+    "react-dnd-html5-backend": "^7.4.4",
     "react-dom": "^16.8.6",
     "react-modal": "^3.8.1",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
+    "react-tag-input": "^6.4.0",
     "reactotron-react-js": "^3.1.0",
     "reactotron-redux": "^3.1.0",
     "reactotron-redux-saga": "^4.2.2",
@@ -60,6 +63,7 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.13.0"
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react-hooks": "^1.6.0"
   }
 }

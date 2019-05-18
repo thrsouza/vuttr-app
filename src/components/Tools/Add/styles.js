@@ -8,8 +8,7 @@ export const Container = styled.div`
   flex-direction: column;
   padding: 10px 20px;
 
-  > input + span,
-  > textarea + span {
+  > span {
     display: flex;
     flex-flow: row-reverse;
     margin-top: 5px;

@@ -5,8 +5,10 @@
     "browser": true,
     "jest": true
   },
-  "plugins": ["react", "jsx-a11y", "import"],
+  "plugins": ["react", "react-hooks", "jsx-a11y", "import"],
   "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off",
     "react/jsx-filename-extension": [
       "error",
       {

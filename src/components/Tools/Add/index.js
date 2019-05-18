@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import Button from '../../shared/Button';
 import Icon from '../../shared/Icon';
 import Modal from '../../shared/Modal';
+import TagsInput from '../../shared/TagsInput';
 
 import * as Styled from './styles';
 
@@ -12,7 +13,7 @@ const schema = Yup.object().shape({
   title: Yup.string().required('Tool Name is required'),
   link: Yup.string().url('Tool Link must be a valid URL'),
   description: Yup.string().required('Tool Description is required'),
-  tags: Yup.string().required('Tags is required'),
+  tags: Yup.array().required('Tags is required'),
 });
 
 function ToolAdd() {
@@ -27,7 +28,6 @@ function ToolAdd() {
   }
 
   function handleSubmit() {
-    // console.log(data);
     setModalState({ isOpen: false });
   }
 
@@ -52,7 +52,7 @@ function ToolAdd() {
             <Styled.Textarea name="description" placeholder="Enter with description" />
 
             <Styled.Label>Tags *</Styled.Label>
-            <Styled.Input name="tags" placeholder="Enter with tags" />
+            <TagsInput name="tags" placeholder="Enter with a new tag" />
 
             <Styled.Footer>
               <Button type="submit">Add tool</Button>
