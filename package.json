@@ -2,6 +2,7 @@
   "name": "vuttr-app",
   "version": "0.0.1",
   "private": false,
+  "license": "MIT",
   "author": {
     "name": "Thiago de Souza",
     "email": "email@thiagodesouza.com.br",
@@ -12,10 +13,8 @@
     "url": "https://github.com/thiagodesouza/vuttr-app.git"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "configure": "echo 'REACT_APP_API_URL=http://localhost:3333' > .env",
+    "start": "react-scripts start"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,6 +40,7 @@
     "@rocketseat/unform": "^1.0.1",
     "axios": "^0.18.0",
     "connected-react-router": "^6.4.0",
+    "dotenv": "^8.0.0",
     "history": "^4.9.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
