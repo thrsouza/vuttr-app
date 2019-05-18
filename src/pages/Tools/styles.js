@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+import FontIcon from '../../components/FontIcon';
+
+import colors from '../../styles/colors';
+
 export const Container = styled.div`
   align-items: center;
   display: flex;
@@ -26,4 +30,36 @@ export const LeftContent = styled.div`
   flex-flow: wrap;
   width: 100%;
   max-width: 700px;
+`;
+
+export const ListContainer = styled.div`
+  margin-bottom: 50px;
+  max-width: 900px;
+  width: 90%;
+`;
+
+export const EmptyContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  max-width: 900px;
+  width: 100%;
+  height: 300px;
+`;
+
+export const BigFontIcon = styled(FontIcon)`
+  display: flex;
+  justify-content: center;
+  color: ${colors.mostDarkestWhite};
+  margin: 50px 10px;
+  font-size: 100px;
+`;
+
+export const BigMessage = styled.h1`
+  display: flex;
+  justify-content: center;
+  color: ${colors.mostDarkestWhite};
+  margin: 50px 10px;
+  font-size: 60px;
 `;

@@ -9,7 +9,7 @@ import CheckBox from '../../components/CheckBox';
 import SearchBox from '../../components/SearchBox';
 
 import AddItem from './AddItem';
-import List from './List';
+import ListItem from './ListItem';
 
 import * as Styled from './styles';
 
@@ -30,7 +30,30 @@ function ToolsPage({ tools, getToolsRequest, deleteToolRequest }) {
 
   function handleToolListItemDelete(id) {
     deleteToolRequest(id);
-    getToolsRequest(state.searchText, state.searchTagOnly);
+  }
+
+  function renderListItems() {
+    if (tools.data) {
+      if (tools.data.length === 0) {
+        return (
+          <Styled.EmptyContainer>
+            <Styled.BigMessage>No data found</Styled.BigMessage>
+            <Styled.BigFontIcon className="far fa-frown" />
+          </Styled.EmptyContainer>
+        );
+      }
+
+      return tools.data.map(item => (
+        <ListItem key={item.id} item={item} handleDelete={handleToolListItemDelete} />
+      ));
+    }
+
+    return (
+      <Styled.EmptyContainer>
+        <Styled.BigMessage>Loading...</Styled.BigMessage>
+        <Styled.BigFontIcon className="fas fa-circle-notch fa-spin" />
+      </Styled.EmptyContainer>
+    );
   }
 
   return (
@@ -51,7 +74,7 @@ function ToolsPage({ tools, getToolsRequest, deleteToolRequest }) {
           <AddItem />
         </Styled.ActionContent>
       </Styled.Content>
-      <List data={tools.data} handleToolListItemDelete={handleToolListItemDelete} />
+      <Styled.ListContainer>{renderListItems()}</Styled.ListContainer>
     </Styled.Container>
   );
 }
