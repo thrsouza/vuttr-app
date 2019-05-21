@@ -30,6 +30,10 @@ export const LeftContent = styled.div`
   flex-flow: wrap;
   width: 100%;
   max-width: 700px;
+
+  @media (max-width: 1000px) {
+    max-width: 100%;
+  }
 `;
 
 export const ListContainer = styled.div`

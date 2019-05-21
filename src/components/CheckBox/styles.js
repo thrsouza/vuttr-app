@@ -19,5 +19,13 @@ export const Container = styled.label`
     :checked {
       background: ${colors.blue};
     }
+
+    @media (max-width: 1000px) {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    padding: 20px 0;
   }
 `;

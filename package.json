@@ -13,7 +13,6 @@
     "url": "https://github.com/thiagodesouza/vuttr-app.git"
   },
   "scripts": {
-    "configure": "echo 'REACT_APP_API_URL=http://localhost:3333' > .env",
     "start": "react-scripts start"
   },
   "eslintConfig": {

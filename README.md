@@ -21,16 +21,13 @@ This project was created to BossaBox Challenge - Front-end.
 
 Start the <b>VUTTR Server API</b> - back-end application ([https://github.com/thiagodesouza/vuttr-server-mock](https://github.com/thiagodesouza/vuttr-server-mock));
 
-### Run Application
+Configure the `.env` file based into `.env.example` and run application!
 
-To configure and start <b>VUTTR APP</b>, open your terminal and enter with commands:
+### Run Application
 
 ```shell
 # install dependencies
 $ yarn || npm install
-
-# create a .env file
-$ yarn configure || npm run configure
 
 # run application
 $ yarn start || npm start

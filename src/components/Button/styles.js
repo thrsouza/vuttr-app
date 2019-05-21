@@ -16,4 +16,9 @@ export const Button = styled.button`
   :hover {
     background-color: ${colors.darkerBlue};
   }
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    margin: 30px 0;
+  }
 `;
