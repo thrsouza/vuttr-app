@@ -23,7 +23,9 @@ export const Input = styled(unform.Input)`
   padding: 10px;
 `;
 
-export const Textarea = styled(unform.Textarea)`
+export const Textarea = styled(unform.Input).attrs({
+  multiline: true,
+})`
   background-color: ${colors.darkerWhite};
   border: 1px solid ${colors.darkestWhite};
   border-radius: 3px;

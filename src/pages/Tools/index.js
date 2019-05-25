@@ -27,19 +27,19 @@ function ToolsPage({
     setState({ ...state, searchText: value });
   }, 500);
 
-  const handleCheckBox = (value) => {
+  function handleCheckBox(value) {
     setState({ ...state, searchTagOnly: value });
-  };
+  }
 
-  const handleToolListAddItem = (title, link, description, tags) => {
+  function handleToolListAddItem(title, link, description, tags) {
     addToolRequest(title, link, description, tags);
-  };
+  }
 
-  const handleToolListDeleteItem = (id) => {
+  function handleToolListDeleteItem(id) {
     deleteToolRequest(id);
-  };
+  }
 
-  const renderListItems = () => {
+  function renderListItems() {
     if (tools.loading && tools.data.length === 0) {
       return (
         <Styled.EmptyContainer>
@@ -61,7 +61,7 @@ function ToolsPage({
     return tools.data.map(item => (
       <ListItem key={item.id} item={item} handleDelete={handleToolListDeleteItem} />
     ));
-  };
+  }
 
   return (
     <Styled.Container>

@@ -10,18 +10,18 @@ import * as Styled from './styles';
 function DeleteItem({ item, handleDelete }) {
   const [modalState, setModalState] = useState({ isOpen: false });
 
-  const handleOpenModal = () => {
+  function handleOpenModal() {
     setModalState({ isOpen: true });
-  };
+  }
 
-  const handleCloseModal = () => {
+  function handleCloseModal() {
     setModalState({ isOpen: false });
-  };
+  }
 
-  const handleRemoveItem = () => {
+  function handleRemoveItem() {
     handleDelete(item.id);
     setModalState({ isOpen: false });
-  };
+  }
 
   return (
     <>

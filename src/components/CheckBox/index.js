@@ -8,10 +8,10 @@ function CheckBox({
 }) {
   const [checkedState, setCheckedState] = useState(checked);
 
-  const handleChange = ({ target }) => {
+  function handleChange({ target }) {
     setCheckedState(target.checked);
     onChange(target.checked);
-  };
+  }
 
   return (
     <Container>
