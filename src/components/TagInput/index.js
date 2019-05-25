@@ -28,13 +28,13 @@ function TagInput({ name, placeholder }) {
     });
   }, [fieldName, tagsState]); // eslint-disable-line
 
-  function handleDelete(i) {
+  const handleDelete = (i) => {
     setTagsState([...tagsState.filter((_, index) => index !== i)]);
-  }
+  };
 
-  function handleAddition(tag) {
+  const handleAddition = (tag) => {
     setTagsState([...tagsState, tag]);
-  }
+  };
 
   return (
     <>

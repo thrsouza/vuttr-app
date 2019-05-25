@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { debounce } from 'lodash';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -22,23 +23,23 @@ function ToolsPage({
     getToolsRequest(state.searchText, state.searchTagOnly);
   }, [state, getToolsRequest]);
 
-  function handleSearchBox(value) {
+  const handleSearchBox = debounce((value) => {
     setState({ ...state, searchText: value });
-  }
+  }, 500);
 
-  function handleCheckBox(value) {
+  const handleCheckBox = (value) => {
     setState({ ...state, searchTagOnly: value });
-  }
+  };
 
-  function handleToolListAddItem(title, link, description, tags) {
+  const handleToolListAddItem = (title, link, description, tags) => {
     addToolRequest(title, link, description, tags);
-  }
+  };
 
-  function handleToolListDeleteItem(id) {
+  const handleToolListDeleteItem = (id) => {
     deleteToolRequest(id);
-  }
+  };
 
-  function renderListItems() {
+  const renderListItems = () => {
     if (tools.loading && tools.data.length === 0) {
       return (
         <Styled.EmptyContainer>
@@ -60,7 +61,7 @@ function ToolsPage({
     return tools.data.map(item => (
       <ListItem key={item.id} item={item} handleDelete={handleToolListDeleteItem} />
     ));
-  }
+  };
 
   return (
     <Styled.Container>

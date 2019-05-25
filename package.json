@@ -1,6 +1,6 @@
 {
   "name": "vuttr-app",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": false,
   "license": "MIT",
   "author": {
@@ -41,6 +41,7 @@
     "connected-react-router": "^6.4.0",
     "dotenv": "^8.0.0",
     "history": "^4.9.0",
+    "lodash": "^4.17.11",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dnd": "^7.4.5",

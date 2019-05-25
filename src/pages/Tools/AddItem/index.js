@@ -20,22 +20,22 @@ const schema = Yup.object().shape({
 function AddItem({ handleAddItem }) {
   const [modalState, setModalState] = useState({ isOpen: false });
 
-  function handleOpenModal() {
+  const handleOpenModal = () => {
     setModalState({ isOpen: true });
-  }
+  };
 
-  function handleCloseModal() {
+  const handleCloseModal = () => {
     setModalState({ isOpen: false });
-  }
+  };
 
-  function handleSubmit(data) {
+  const handleSubmit = (data) => {
     const {
       title, link, description, tags,
     } = data;
 
     handleAddItem(title, link, description, tags);
     setModalState({ isOpen: false });
-  }
+  };
 
   return (
     <>

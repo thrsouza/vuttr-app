@@ -6,10 +6,10 @@ import { Container } from './styles';
 function SearchBox({ value, onChange }) {
   const [valueState, setValueState] = useState(value);
 
-  function handleChange({ target }) {
+  const handleChange = ({ target }) => {
     setValueState(target.value);
     onChange(target.value);
-  }
+  };
 
   return (
     <Container>
