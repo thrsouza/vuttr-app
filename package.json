@@ -1,6 +1,6 @@
 {
   "name": "vuttr-app",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "license": "MIT",
   "author": {
@@ -13,7 +13,8 @@
     "url": "https://github.com/thiagodesouza/vuttr-app.git"
   },
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
