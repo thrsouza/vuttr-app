@@ -42,7 +42,7 @@
     "connected-react-router": "^6.4.0",
     "dotenv": "^8.0.0",
     "history": "^4.9.0",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dnd": "^7.4.5",
